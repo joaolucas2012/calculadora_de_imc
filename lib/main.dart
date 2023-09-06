@@ -18,12 +18,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        child: const Text(
-          "Bem vindo ao app!",
-          style: TextStyle(color: Colors.black),
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text(
+          "Calculadora de IMC",
+          style: TextStyle(color: Colors.white),
         ),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(onPressed: () {}, icon: const Icon(Icons.refresh)),
+        ],
       ),
     );
   }
