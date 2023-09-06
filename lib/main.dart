@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/home_page_form.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -29,6 +30,7 @@ class _HomeState extends State<Home> {
           IconButton(onPressed: () {}, icon: const Icon(Icons.refresh)),
         ],
       ),
+      body: const HomePageForm(),
     );
   }
 }
