@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page_form.dart';
+import 'package:flutter_application_1/utils/classes/corestore.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -16,6 +17,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  TextEditingController weightController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,14 +34,28 @@ class _HomeState extends State<Home> {
           actions: <Widget>[
             IconButton(
                 onPressed: () {},
-                icon: const Icon(
-                  Icons.refresh,
-                  color: Colors.white,
+                icon: IconButton(
+                  onPressed: _resetFields,
+                  icon: const Icon(
+                    Icons.refresh,
+                    color: Colors.white,
+                  ),
                 )),
           ],
         ),
-        body: const HomePageForm(),
+        body: HomePageForm(
+          weightController: weightController,
+          heightController: heightController,
+        ),
       ),
     );
+  }
+
+  void _resetFields() {
+    setState(() {
+      weightController.text = "";
+      heightController.text = "";
+      CoreStore.info = null;
+    });
   }
 }
