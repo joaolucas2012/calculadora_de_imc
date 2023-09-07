@@ -18,19 +18,26 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: const Text(
-          "Calculadora de IMC",
-          style: TextStyle(color: Colors.white),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          title: const Text(
+            "Calculadora de IMC",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+          centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.refresh,
+                  color: Colors.white,
+                )),
+          ],
         ),
-        centerTitle: true,
-        actions: <Widget>[
-          IconButton(onPressed: () {}, icon: const Icon(Icons.refresh)),
-        ],
+        body: const HomePageForm(),
       ),
-      body: const HomePageForm(),
     );
   }
 }

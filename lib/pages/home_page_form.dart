@@ -14,26 +14,30 @@ class _HomePageFormState extends State<HomePageForm> {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.all(16.0),
-      child: Column(
-        children: <Widget>[
-          Center(
-            child: Icon(
-              Icons.person_outlined,
-              size: 120,
-              color: Colors.green,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Center(
+              child: Icon(
+                Icons.person_outlined,
+                size: 120,
+                color: Colors.purple,
+              ),
             ),
-          ),
-          Input(text: "Peso (kg)"),
-          Input(text: "Altura (cm)"),
-          Button(title: "Calcular"),
-          Text(
-            "Informe seus dados!",
-            style: TextStyle(
-              color: Colors.green,
-              fontSize: 16,
-            ),
-          )
-        ],
+            Input(text: "Peso (kg)"),
+            Input(text: "Altura (cm)"),
+            Button(title: "Calcular"),
+            Text(
+              "Informe seus dados!",
+              style: TextStyle(
+                color: Colors.purple,
+                fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
       ),
     );
   }

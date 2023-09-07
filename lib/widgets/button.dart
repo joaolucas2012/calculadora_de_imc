@@ -26,14 +26,12 @@ class Button extends StatelessWidget {
                   ),
                 ),
                 backgroundColor: const MaterialStatePropertyAll(
-                  Colors.green,
+                  Colors.purple,
                 ),
               ),
               child: Text(
                 title,
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
+                style: const TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),
           ),
