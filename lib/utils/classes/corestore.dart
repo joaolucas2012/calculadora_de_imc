@@ -1,3 +1,3 @@
 class CoreStore {
-  static double? info;
+  static String? info;
 }

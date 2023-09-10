@@ -6,11 +6,15 @@ import 'package:flutter_application_1/widgets/input.dart';
 class HomePageForm extends StatefulWidget {
   final TextEditingController weightController;
   final TextEditingController heightController;
+  final Function setButtonToVisible;
+  final bool buttonIsVisible;
 
   const HomePageForm({
     Key? key,
     required this.weightController,
     required this.heightController,
+    required this.setButtonToVisible,
+    required this.buttonIsVisible,
   }) : super(key: key);
 
   @override
@@ -18,10 +22,16 @@ class HomePageForm extends StatefulWidget {
 }
 
 class _HomePageFormState extends State<HomePageForm> {
-  bool buttonIsVisible = false;
-
   @override
   Widget build(BuildContext context) {
+    Map<bool, Color> colorOfBMI = {
+      (CoreStore.info == null): Colors.purple,
+      (CoreStore.info != null && !CoreStore.info!.contains("peso ideal")):
+          Colors.red,
+      (CoreStore.info != null && CoreStore.info!.contains("peso ideal")):
+          Colors.green,
+    };
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: SingleChildScrollView(
@@ -38,23 +48,23 @@ class _HomePageFormState extends State<HomePageForm> {
             Input(
               text: "Peso (kg)",
               controller: widget.weightController,
-              setButtonToVisible: _setButtonToVisible,
+              setButtonToVisible: widget.setButtonToVisible,
             ),
             Input(
               text: "Altura (cm)",
               controller: widget.heightController,
-              setButtonToVisible: _setButtonToVisible,
+              setButtonToVisible: widget.setButtonToVisible,
             ),
             Button(
               title: "Calcular",
-              calculate: buttonIsVisible ? _calculateBMI : null,
+              calculate: widget.buttonIsVisible ? _calculateBMI : null,
             ),
             Text(
               (CoreStore.info != null)
-                  ? "Seu IMC é ${CoreStore.info!.toStringAsPrecision(2)}"
+                  ? CoreStore.info!
                   : "Informe seus dados!",
-              style: const TextStyle(
-                color: Colors.purple,
+              style: TextStyle(
+                color: colorOfBMI[true],
                 fontSize: 16,
               ),
               textAlign: TextAlign.center,
@@ -68,15 +78,21 @@ class _HomePageFormState extends State<HomePageForm> {
   void _calculateBMI() {
     double weight = double.parse(widget.weightController.text);
     double height = double.parse(widget.heightController.text) / 100;
-    setState(() {
-      CoreStore.info = weight / (height * height);
-    });
-  }
 
-  void _setButtonToVisible() {
+    double bmi = weight / (height * height);
+
+    Map<bool, String> messageOfBMI = {
+      (bmi < 18.6): ": você está abaixo do peso 🥺",
+      (bmi >= 18.6 && bmi < 24.9): ": Você está no peso ideal 😄",
+      (bmi >= 24.9 && bmi < 29.9): ": Você está levemente acima do peso 😅",
+      (bmi >= 29.9 && bmi < 34.9): ": Você está com obesidade Grau I 🧐",
+      (bmi >= 34.9 && bmi < 39.9): ": Você está com obesidade Grau II 😣",
+      (bmi >= 40): ": Você está com obesidade Grau III 🤯",
+    };
+
     setState(() {
-      buttonIsVisible = widget.weightController.text.isNotEmpty &&
-          widget.heightController.text.isNotEmpty;
+      CoreStore.info =
+          "Seu IMC é ${bmi.toStringAsPrecision(2)}${messageOfBMI[true]}";
     });
   }
 }

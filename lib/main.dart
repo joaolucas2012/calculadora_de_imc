@@ -17,6 +17,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool buttonIsVisible = false;
   TextEditingController weightController = TextEditingController();
   TextEditingController heightController = TextEditingController();
 
@@ -33,22 +34,29 @@ class _HomeState extends State<Home> {
           centerTitle: true,
           actions: <Widget>[
             IconButton(
-                onPressed: () {},
-                icon: IconButton(
-                  onPressed: _resetFields,
-                  icon: const Icon(
-                    Icons.refresh,
-                    color: Colors.white,
-                  ),
-                )),
+              onPressed: _resetFields,
+              icon: const Icon(
+                Icons.refresh,
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
         body: HomePageForm(
           weightController: weightController,
           heightController: heightController,
+          setButtonToVisible: _setButtonToVisible,
+          buttonIsVisible: buttonIsVisible,
         ),
       ),
     );
+  }
+
+  void _setButtonToVisible() {
+    setState(() {
+      buttonIsVisible =
+          weightController.text.isNotEmpty && heightController.text.isNotEmpty;
+    });
   }
 
   void _resetFields() {
@@ -57,5 +65,6 @@ class _HomeState extends State<Home> {
       heightController.text = "";
       CoreStore.info = null;
     });
+    _setButtonToVisible();
   }
 }
