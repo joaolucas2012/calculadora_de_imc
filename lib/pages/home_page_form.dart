@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/utils/classes/corestore.dart';
-import 'package:flutter_application_1/widgets/button.dart';
-import 'package:flutter_application_1/widgets/input.dart';
+import 'package:calculadora_de_imc/utils/classes/corestore.dart';
+import 'package:calculadora_de_imc/widgets/button.dart';
+import 'package:calculadora_de_imc/widgets/input.dart';
 
 class HomePageForm extends StatefulWidget {
   final TextEditingController weightController;

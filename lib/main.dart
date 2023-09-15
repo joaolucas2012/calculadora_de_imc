@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/home_page_form.dart';
-import 'package:flutter_application_1/utils/classes/corestore.dart';
+import 'package:calculadora_de_imc/pages/home_page_form.dart';
+import 'package:calculadora_de_imc/utils/classes/corestore.dart';
 
 void main() {
   runApp(const MaterialApp(
