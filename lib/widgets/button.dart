@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
   final String title;
+  final Function? calculate;
 
-  const Button({Key? key, required this.title}) : super(key: key);
+  const Button({
+    Key? key,
+    required this.title,
+    this.calculate,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,7 @@ class Button extends StatelessWidget {
         children: [
           Expanded(
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => (calculate != null) ? calculate!() : null,
               style: ButtonStyle(
                 padding: const MaterialStatePropertyAll(
                   EdgeInsets.symmetric(
@@ -25,15 +30,13 @@ class Button extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                backgroundColor: const MaterialStatePropertyAll(
-                  Colors.green,
+                backgroundColor: MaterialStatePropertyAll(
+                  (calculate != null) ? Colors.purple : Colors.grey,
                 ),
               ),
               child: Text(
                 title,
-                style: const TextStyle(
-                  color: Colors.white,
-                ),
+                style: const TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),
           ),
