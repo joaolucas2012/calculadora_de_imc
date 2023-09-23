@@ -10,11 +10,13 @@ O objetivo desta aplicação é possibilitar ao usuário inserir suas medidas de
 
 Junto do resultado do cálculo do IMC será exibida uma mensagem personalizada para cada caso.
 
-<center>
 
-<video src="assets/videos/calculadora-de-imc.mp4" controls title="Calculadora de IMC" width="300"></video>
 
-</center>
+https://github.com/joaolucas2012/calculadora_de_imc/assets/54084537/a1ae377d-046c-4506-b507-c6c9f503fe4c
+
+
+
+
 
 ---
 
