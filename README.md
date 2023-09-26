@@ -10,17 +10,15 @@ O objetivo desta aplicação é possibilitar ao usuário inserir suas medidas de
 
 Junto do resultado do cálculo do IMC será exibida uma mensagem personalizada para cada caso.
 
-
+ <div  align="center">
 
 https://github.com/joaolucas2012/calculadora_de_imc/assets/54084537/a1ae377d-046c-4506-b507-c6c9f503fe4c
 
-
-
-
+</div>
 
 ---
 
-<center>
+ <div  align="center">
 
 ## DOWNLOAD DO APP PARA ANDROID E IOS:
 
@@ -28,17 +26,17 @@ https://github.com/joaolucas2012/calculadora_de_imc/assets/54084537/a1ae377d-046
 
 # [BAIXAR APK](https://drive.google.com/file/d/16XfcTbijai91oRRKwTJ_8XuMWePI1ScZ/view?usp=sharing)
 
-</center>
+</div>
 
 ### TELA INICIAL DO APP
 
 A tela inicial apresenta os campos de texto para inserção do peso e altura do usuário. O botão de "Calcular" só é habilitado caso o usuário digitar dados para os dois campos de texto.
 
-<center>
+<div  align="center">
 
   <img src="assets/images/image-1.jpeg" width="300">
 
-</center>
+</div>
 
 ---
 
@@ -46,11 +44,11 @@ A tela inicial apresenta os campos de texto para inserção do peso e altura do 
 
 Ao inserir dados de altura e peso, o botão "Calcular" é ativado.
 
-<center>
+ <div  align="center">
 
   <img src="assets/images/image-2.jpeg" width="300">
 
-</center>
+</div>
 
 ---
 
@@ -58,15 +56,15 @@ Ao inserir dados de altura e peso, o botão "Calcular" é ativado.
 
 Após clicar em "Calcular", o aplicativo calcula o índice de massa corporal com as informações do usuário, e esse resultado é exibido na tela com uma mensagem correspondente.
 
-<center>
+ <div align="center">
 
 ### O cálculo do IMC toma como base a fórmula:
 
   <img src="assets/images/image-imc.png" width="500">
 
-</center>
+</div>
 
-<center>
+<div align="center">
 
 ### Utilizando essa fórmula, os seguintes resultados são possíveis:
 
@@ -74,51 +72,51 @@ Após clicar em "Calcular", o aplicativo calcula o índice de massa corporal com
 
 **Com base nos dados acima, tem-se as seguintes telas de resultado no aplicativo:**
 
-</center>
+</div>
 
 ## TELA DE PESO IDEAL:
 
-<center>
+ <div align="center">
 
   <img src="assets/images/image-3.jpeg" width="300">
 
-</center>
+</div>
 
 ## TELA DE PESO ABAIXO DO IDEAL:
 
-<center>
+ <div  align="center">
 
   <img src="assets/images/image-4.jpeg" width="300">
 
-</center>
+</div>
 
 ## TELA DE PESO ACIMA DO IDEAL:
 
-<center>
+ <div  align="center">
 
   <img src="assets/images/image-5.jpeg" width="300">
 
-</center>
+</div>
 
 ## TELA DE OBESIDADE GRAU I:
 
-<center>
+ <div  align="center">
 
   <img src="assets/images/image-6.jpeg" width="300">
 
-</center>
+</div>
 
 ## TELA DE OBESIDADE GRAU II:
 
-<center>
+ <div  align="center">
 
   <img src="assets/images/image-7.jpeg" width="300">
 
-</center>
+</div>
 
 ## TELA DE OBESIDADE GRAU III:
 
-<center>
+ <div  align="center">
 
   <img src="assets/images/image-8.jpeg" width="300">
 
@@ -127,4 +125,4 @@ Após clicar em "Calcular", o aplicativo calcula o índice de massa corporal com
 
 ### Desenvolvido com ❤️ por João Lucas
 
-</center>
+</div>
